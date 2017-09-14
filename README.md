@@ -1,6 +1,6 @@
 This project was CREATED with [Create React App](https://github.com/facebookincubator/create-react-app).
 
-Just a simple example of creating React CRUD Todo application. You can add todo, delete todo , edit tod etc.
+Just a simple example of creating React CRUD Todo application. You can add todo, delete todo , edit todo etc.
 
 ### Demo
 This project Demo [Demo](https://code.visualstudio.com)
@@ -45,10 +45,4 @@ For the project to build, **these files must exist with exact filenames**:
 
 You can delete or rename the other files.
 
-### Compile
-To compile all js to dist/app.bundle.js
-
-```sh
-$ webpack
-```
-# My project's README
+##Any kind of suggestion appreaciated
