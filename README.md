@@ -3,7 +3,7 @@ This project was CREATED with [Create React App](https://github.com/facebookincu
 Just a simple example of creating React CRUD Todo application. You can add todo, delete todo , edit todo etc.
 
 ### Demo
-This project Demo [Demo](https://code.visualstudio.com)
+This project Demo [Demo](https://rahadkc.github.io/ReactCRUD/)
 
 ### Version
 1.0.0
