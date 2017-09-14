@@ -24,14 +24,10 @@ Requires [Node.js](https://nodejs.org/) v4+ to run.
 ```sh
 $ npm install
 ```
+```sh
+$ npm start
+```
 
-## Available Scripts
-
-In the project directory, you can run:
-
-### `npm start`
-
-Runs the app in the development mode.<br>
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser or whatever port you changed it to.
 
 The page will reload if you make edits.<br>
