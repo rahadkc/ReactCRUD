@@ -37,7 +37,7 @@ class InputForm extends Component{
         <form onSubmit={this.onSubmit} >
           <input type="text" ref="text"  value={this.props.text} onChange={this.onChange} className="inputField" placeholder={this.props.isEdit ? "" : "Add Todo..."}/>
         </form>
-        {this.props.isEdit ? <button onClick={this.editComplete} className="editCancel">Done</button> : ""}
+        {this.props.isEdit ? <button onClick={this.editComplete} className="editCancel">Cancel</button> : ""}
       </div>
     )
   }
