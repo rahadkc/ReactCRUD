@@ -59,7 +59,9 @@ li span::first-letter{
 li button:nth-last-of-type(n+2){
   margin-right: 10px;
 }
-
+input[type="checkbox"]:checked + span{
+    text-decoration:line-through;
+}
 .formWrapper{
   position:relative;
 }
@@ -70,9 +72,13 @@ li button:nth-last-of-type(n+2){
   position:absolute;
   top:0;
   right:0;
-  height:100%;
+  height:50px;
 }
-
+.showComplete{
+  color:#fff;
+  font-size:14px;
+  margin-top:20px;
+}
 /*//animation*/
 .example-enter {
   opacity: 0.01;

@@ -9,18 +9,38 @@ class App extends Component {
   constructor(){
     super();
     this.state = {
+      showCompleted: false,
+      searchText: '',
       text: '',
       todos: [],
-      isEdit: 0
+      isEdit: 0,
+      todos: [
+        {
+          id: uuid(),
+          text: "name 1",
+          completed: false
+        },
+        {
+          id: uuid(),
+          text: "name 2",
+          completed: true
+        },
+        {
+          id: uuid(),
+          text: "name 3",
+          completed: false
+        }
+      ]
     }
   }
   handleTodoAdd = (text) => {
     let newTodo = {
       id: uuid(),
-      text: text
+      text: text,
+      completed: false
     }
     let todos = this.state.todos;
-    todos.push(newTodo)
+    todos.unshift(newTodo)
     this.setState({
       todos: todos,
       text: ''
@@ -71,6 +91,32 @@ handleUpdate = (newTodo) => {
   }) 
 }
 
+handleToggle = (id) => {
+  console.log(id, " toggle")
+  let todos = this.state.todos;
+  todos.map((todo) => {
+    todo.id === id ? todo.completed = !todo.completed : todo
+  })
+  this.setState({
+    todos: todos
+  })
+  
+  
+}
+
+searchText = (v) => {
+  this.setState({
+    searchText: v
+  })
+}
+
+handleShowCompleted = () => {
+  let showToggle = !this.state.showCompleted;
+  this.setState({
+    showCompleted: showToggle
+  })
+}
+
   render() {
     return (
       <div className="app">
@@ -78,13 +124,19 @@ handleUpdate = (newTodo) => {
         <h4>You can Add , delete and Edit data </h4>
         <InputForm
         text={this.state.text}
+        showCompleted={this.state.showCompleted}
+        handleCompleted={this.handleShowCompleted}
         changeText={this.handleChangeText}
+        searchText={this.searchText}
         onTodoUpdate={this.handleUpdate}
         isEdit={this.state.isEdit}
         editDone={this.handleDone}
         onTodoAdd={this.handleTodoAdd}/>
 
         <TodoList 
+        showCompleted={this.state.showCompleted}
+        searchText={this.state.searchText}
+        onToggle={this.handleToggle}
         editTodo={this.handleTodoEdit}
         isEdit={this.state.isEdit}
         todos={this.state.todos} 

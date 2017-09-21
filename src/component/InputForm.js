@@ -13,7 +13,8 @@ class InputForm extends Component{
       console.log("update data")
       let updateTodo = {
         id: this.props.isEdit,
-        text: text
+        text: text,
+        completed: this.props.showCompleted
       }
       this.props.onTodoUpdate(updateTodo)
     }else{
@@ -27,9 +28,15 @@ class InputForm extends Component{
     this.props.changeText(e.target.value);
   }
 
+  onSearch = (e) => {
+    console.log(e.target.value);
+    this.props.searchText(e.target.value);
+  }
+
   editComplete = () => {
     this.props.editDone(this.props.isEdit)
   }
+
 
   render() {
     return(
@@ -37,6 +44,8 @@ class InputForm extends Component{
         <form onSubmit={this.onSubmit} >
           <input type="text" ref="text"  value={this.props.text} onChange={this.onChange} className="inputField" placeholder={this.props.isEdit ? "" : "Add Todo..."}/>
         </form>
+          <input type="text" onChange={this.onSearch} className="inputField" placeholder="Search here"/>
+        <div onClick={this.props.handleCompleted} className="showComplete"><input type="checkbox" checked={this.props.showCompleted}/>show completed</div>
         {this.props.isEdit ? <button onClick={this.editComplete} className="editCancel">Cancel</button> : ""}
       </div>
     )
